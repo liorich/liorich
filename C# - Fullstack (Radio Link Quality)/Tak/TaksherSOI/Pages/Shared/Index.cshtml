@@ -1,0 +1,151 @@
+﻿@page
+@model Tak.Pages.pageModel
+@namespace Tak.Globals
+@{
+    Layout = "_Layout";
+}
+
+<div id="MainContainer">
+    <partial name="menu.cshtml" />
+    <div id="Pages">
+        <div id="Page_Dashboard" class="DataPage">
+            <div id="DB2_Title" style='color: grey; font-style: italic; text-align: center; background-color: lightgray'><h2>Dashboard</h2></div>
+            <div id="DB2_System_Time" style='font-weight: bold; font-style: italic; text-align: center;'>System time: ...</div>
+            <hr />
+            <div id="DB2_MainContainer">
+                <!-- Tak status Container-->
+                <!-- Template Graph -->
+                <template id="tmp_GraphBox">
+                    <div id="Graph_" class="Graph_Main">
+                        <div id="Graph_Head">
+                            <div id="Graph_Head_Title">[TITLE]</div>
+                            <button id="Graph_Btn_SNR" class="Graph_Btn">SNR</button>
+                            <button id="Graph_Btn_RSSI" class="Graph_Btn">RSSI</button>
+                            <button id="Graph_Btn_Close" class="Graph_Btn">X</button>
+                        </div>
+                        <div id="Graph_Legend">
+                        </div>
+                        <div id="Graph_Content">
+                            <canvas id="Graph_Markers"></canvas>
+                            <canvas id="Graph_Display"></canvas>
+                        </div>
+                        <div id="Graph_Time">
+                            <div id="Graph_Time_Header">TIME</div>
+                            <canvas id="Graph_Time_Markers"></canvas>
+                        </div>
+                    </div>
+                </template>
+
+                <!-- Template Legend -->
+                <template id="tmp_GraphLegend">
+                    <div id="Graph_Legend_" class="Graph_Legend_Container">
+                        <div class="Graph_Legend_Color"></div>
+                        <div class="Graph_Legend_Bit">Legend 1</div>
+                    </div>
+                </template>
+                <!-- End Template LEgend-->
+                <!-- Template Container -->
+                <template id="tmp_Container">
+                    <div id="Host_Main_" class="Host_ContainerMain">
+                        <!-- Left container: Host and its connected platforms-->
+                        <div id="Host_" class="Host_ContainerData">
+                            <div id="HostLine" class="Host_Line">
+                                <div id="Host" class="MajorPlat">
+                                    <div id="Host_name">GDT-?</div>
+                                    <div id="Host_info">
+                                        Waiting for GDT Information...
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="Buffer"></div>
+                            <div id="Plats" class="Plats_Line">
+                                <!-- Plats inserted here -->
+                            </div>
+                        </div>
+                        <div id="Host_LinkQuals">
+                            GDT Rx
+                            <!-- Quals inserted here -->
+                        </div>
+                    </div>
+                </template>
+                <!-- End Template Container -->
+                <!-- Template Platform -->
+                <template id="tmp_Platform">
+                    <div id="Plat_" class="Plat">
+                        <div id="Plat_name">A-???</div>
+                        <div class="TableContainer">
+                            <table id="Data" class="Plat_Data">
+                                <tr><th>Rx</th><th>RSSI<h7>[dBm]</h7></th><th>SNR<h7>[dB]</h7></th></tr>
+                                <tr><th>A1</th><th id="A1RSSI">-</th><th id="A1SNR">-</th></tr>
+                                <tr><th>A2</th><th id="A2RSSI">-</th><th id="A2SNR">-</th></tr>
+                            </table>
+                        </div>
+                        <div id="Plat_ms">---ms</div>
+                        <div id="Plat_com">...</div>
+                    </div>
+                </template>
+                <!-- End Template Platform -->
+                <!-- Template LinkQual -->
+                <template id="tmp_Link">
+                    <div id="Link_" class="TableContainerLink">
+                        <table id="Data" class="Plat_Data">
+                            <tr><th id="LinkName">A-???</th><th>RSSI<h7>[dBm]</h7></th><th>SNR<h7>[dB]</h7></th></tr>
+                            <tr><th>ANT1</th><th id="A1RSSI">-</th><th id="A1SNR">-</th></tr>
+                            <tr><th>ANT2</th><th id="A2RSSI">-</th><th id="A2SNR">-</th></tr>
+                        </table>
+                    </div>
+                </template>
+                <!-- End Template LinkQual -->
+                <!-- Template MeshBox -->
+                <template id="tmp_MeshBox">
+                    <div id="Mesh_" class="MeshBox">
+                        <div id="MeshInfo">
+                            <div id="MeshId"></div>
+                            <div id="MeshNodes"></div>
+                        </div>
+                        <div id="MeshMat">
+                            <!-- Matrix goes here -->
+                        </div>
+                    </div>
+                </template>
+                <!-- End Template MeshBox-->
+            </div>
+            <!-- Log Functionality -->
+            <div id="DB2_LogFuncContainer">
+                <div id="DB2_LogFuncTitle">
+                    <p style="line-height: 10%">
+                        <h1>Log</h1>
+                        <h6>Quickstart</h6>
+                    </p>
+                </div>
+                <div id="DB2_LogFuncSeparator"></div>
+                <button id="DB2_LogFunc_TrackPlatform" class="LogFuncButton" onclick="dashboardTrackPlatform()">Track Link<br />Quality</button>
+                @if(User.Identity.IsAuthenticated)
+                {
+                <button id="DB2_LogFunc_Bookmark" class="LogFuncButton" onclick="openCommentWindow()">Add<br />Comment</button>
+                <button id="DB2_LogFunc_chAnt" class="LogFuncButton" onclick="chAntWindow()">Change Tx<br />Antenna</button>
+                }
+                <!-- Template TrackPrompt-->
+                <template id="tmp_TrackPrompt">
+                    <div id="DB2_LogFunc_TrackWindow">
+                        <div id="DB2_LogFunc_TrackWindow_Head">
+                            <div id="DB2_LogFunc_TrackWindow_Title">Track Link Quality</div>
+                            <div id="DB2_LogFunc_TrackWindow_Close">x</div>
+                        </div>
+                        <div id="DB2_LogFunc_TrackWindow_Content">
+                            <div id="DB2_LogFunc_TrackWindow_Info">For Platform:</div>
+                            <select id="DB2_LogFunc_TrackWindow_Select" onchange="dashboardAddRequest()">
+                                <option value="none">...</option>
+                            </select>
+                        </div>
+                    </div>
+                </template>
+                <!-- End Template TrackPrompt -->
+            </div>
+            <hr />
+            <div id="DB2_MsgsHeader" style='color: grey; font-style: italic; text-align: left; background-color: lightgray'><h2>Comm Alerts</h2></div>
+            <div id="DB2_msgs_container"></div>
+        </div>
+    </div>
+
+</div>

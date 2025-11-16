@@ -1,0 +1,23 @@
+﻿.DBR_Header{
+    justify-content: center;
+    text-align: center;
+    font-size: 22px;
+    font-weight: bold;
+}
+#Rollback_Info {
+    justify-content: center;
+    text-align: center;
+}
+
+#DBR_DateSelect {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+#DBR_DateSelectInfo{
+    font-weight: bold;
+}
+#DBR_Date_Select {
+    width: 150px;
+    margin-left: 5px;
+}

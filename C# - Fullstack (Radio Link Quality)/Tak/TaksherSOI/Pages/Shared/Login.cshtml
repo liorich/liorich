@@ -1,0 +1,19 @@
+﻿@page
+@model LoginModel
+@{
+    <link rel="stylesheet" href="~/css/login.css" asp-append-version="true" />
+}
+<div id="LoginBox">
+    <div id="LoginHeader">
+        Tak
+    </div>
+    <div id="LoginForm">
+        <form method="post">
+            <div><input name="username" placeholder="Username" /></div>
+            <div>
+                <input name="password" type="password" placeholder="Password" />
+            </div>
+            <div><button type="submit">Login</button></div>
+        </form>
+    </div>
+</div>

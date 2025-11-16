@@ -1,0 +1,581 @@
+﻿#DB2_MainContainer{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.Host_ContainerMain {
+    width: 890px;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    margin: 5px;
+}
+.Host_ContainerData {
+    width: 650px;
+    height: 400px;
+    border: solid dimgray 3px;
+    width: 600px;
+    display: block;
+    justify-content: center;
+}
+.Host_Line{
+    width: 100%;
+    height: 180px;
+    display: flex;
+    justify-content: center;
+}
+.Buffer{
+    width: 100%;
+    height: 40px;
+}
+.Plats_Line{
+    width: 100%;
+    height: 180px;
+    display: flex;
+    justify-content: center;
+}
+.Plat{
+    margin-top: 20px;
+    margin-right: 5px;
+    width: 140px;
+    height: 140px;
+    border: solid dimgray 3px;
+    transition: 0.2s ease-in-out;
+}
+.MeshBox {
+    margin-top: 20px;
+    margin-left: -8px;
+    margin-right: 10px;
+    width: 240px;
+    height: 140px;
+    border: solid dimgray 3px;
+    display: flex;
+    border-left: solid dodgerblue 3px;
+}
+#MeshInfo{
+    margin: 5px;
+    width: 45%;
+    height: 90%;
+    
+}
+#MeshId {
+    text-align: center;
+    font-weight: bold;
+    background-color: aliceblue;
+    border: solid 2px dodgerblue;
+}
+#MeshNodes{
+    white-space: nowrap;
+    margin-top: 25%;
+    font-size: 11px;
+}
+#MeshMat {
+    width: 55%;
+    height: 90%;
+    margin: 5px;
+}
+.DomoMat{
+    width: 100%;
+    height: 100%;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+}
+.DomoMat tr td {
+    border: solid white 1px;
+}
+.Plat:hover{
+    cursor: pointer;
+}
+.MajorPlat{
+    width: 540px;
+    height: 140px;
+    border: solid dimgray 3px;
+    margin-top: 5px;
+    display: flex;
+    justify-content: center;
+}
+#Host_name {
+    width: 200px;
+    align-self: flex-end;
+    font-size: 60px;
+    font-style: italic;
+    color: lightgray;
+    font-weight: bold;
+    line-height: 56px;
+}
+
+#Host_info {
+    width: 340px;
+    align-self: center;
+    text-align: center;
+    font-size: 18px;
+    font-style: italic;
+}
+
+#Host_LinkQuals{
+    text-align: center;
+    font-weight: bold;
+    font-size: 18px;
+    width: 180px;
+    height: 100%;
+    display: block;
+    justify-content: center;
+    border: solid dimgray 3px;
+    margin-left: 10px;
+}
+.TableContainer{
+    display: flex;
+    justify-content: center;
+}
+.TableContainerLink {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    border: solid dimgray 3px;
+    transition: 0.2s ease-in-out;
+}
+
+.Plat_Data {
+    font-weight: 100;
+    font-size: 14px;
+    text-align: center;
+    color: black;
+    background-color: lightgray;
+}
+.Plat_Data h7 {
+    font-size: 8px;
+}
+.Plat_Data tr th{
+    border: solid white 1px;
+}
+#Plat_ms {
+    text-align: center;
+    font-size: 14px;
+}
+#Plat_name {
+    text-align: center;
+    font-weight: 800;
+}
+#Plat_com {
+    text-align: center;
+    font-size: 10px;
+}
+#DB2_LogFuncContainer{
+    margin-top: 5px;
+    width:100%;
+    display: flex;
+    justify-content: center;
+}
+#DB2_LogFuncTitle{
+    font-weight: bold;
+}
+    #DB2_LogFuncTitle br {
+        font-weight: bold;
+    }
+#DB2_LogFuncTitle h3{
+    font-weight: bold;
+}
+#DB2_LogFuncSeparator{
+    margin-left: 5px;
+    margin-right: 5px;
+    width: 3px;
+    background-color: dimgray;
+}
+.LogFuncButton{
+    align-self: center;
+    font-weight: bold;
+    width: 100px;
+    height: 100px;
+    margin-right: 5px;
+}
+.LogFuncButton:hover{
+    background-color: lightgray;
+}
+.Graph_Main {
+    width: 800px;
+    height: 400px;
+    display: block;
+    justify-content: center;
+    border: 2px solid black;
+    margin: 5px;
+}
+#Graph_Head{
+    display: flex;
+    width:100%;
+    height: 30px;
+}
+#Graph_Head_Title{
+    width: 80%;
+    padding-left: 5px;
+    font-style: italic;
+    font-weight: bold;
+    font-size: 20px;
+}
+.Graph_Btn{
+    width: 60px;
+    height: 30px;
+    font-weight: bold;
+}
+.Graph_Btn:hover{
+    background-color: lightgray;
+}
+#Graph_Legend{
+    height: 30px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+}
+#Graph_Content{
+    width: 800px;
+    height: 280px;
+    display: flex;
+    justify-content: center;
+}
+#Graph_Markers{
+    width: 30px;
+    height: 280px;
+}
+#Graph_Display{
+    width: 760px;
+    height: 280px;
+}
+#Graph_Time {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+}
+#Graph_Time_Header{
+    width: 30px;
+    height: 100%;
+    writing-mode: vertical-lr;
+    padding-top: 10px;
+    padding-left: 2px;
+    font-weight: bold;
+    transform: rotate(180deg);
+}
+#Graph_Time_Markers{
+    width: 100%;
+    height: 100%;
+}
+.Graph_Legend_Container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.Graph_Legend_Color{
+    margin: 0px 5px 0px 5px;
+    width: 10px;
+    height: 8px;
+}
+#DB2_LogFunc_TrackWindow {
+    align-self: center;
+    width: 240px;
+    height: 100px;
+    border: 2px solid blue;
+    display: block;
+    justify-content: center;
+}
+#DB2_LogFunc_TrackWindow_Head {
+    display: flex;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+}
+#DB2_LogFunc_TrackWindow_Title {
+    width: 220px;
+    height: 24px;
+    background-color: #3162b0;
+}
+#DB2_LogFunc_TrackWindow_Close {
+    width: 24px;
+    height: 24px;
+    background-color: #194181;
+    text-align: center;
+}
+#DB2_LogFunc_TrackWindow_Close:hover {
+    background-color: #5175ae;
+    cursor: pointer;
+}
+#DB2_LogFunc_TrackWindow_Content {
+    height: 76px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#DB2_LogFunc_TrackWindow_Info {
+    margin-right: 10px;
+}
+#DB2_LogFunc_TrackWindow_Select {
+}
+#DB2_LogFunc_AddComment {
+    align-self: center;
+    width: 240px;
+    height: 100px;
+    border: 2px solid blue;
+    display: block;
+    justify-content: center;
+}
+#DB2_LogFunc_AddComment_Head {
+    display: flex;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+}
+
+#DB2_LogFunc_AddComment_Title {
+    width: 220px;
+    height: 24px;
+    background-color: #3162b0;
+}
+
+#DB2_LogFunc_AddComment_Close {
+    width: 24px;
+    height: 24px;
+    background-color: #194181;
+    text-align: center;
+}
+#DB2_LogFunc_AddComment_Content {
+    justify-content: center;
+    align-items: center;
+}
+#DB2_LogFunc_AddComment_Close:hover {
+    background-color: #5175ae;
+    cursor: pointer;
+}
+.DB2_LogFunc_AddComment {
+    position: absolute;
+    height: 76px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#DB2_LogFunc_chAnt_prompt {
+    align-self: center;
+    width: 240px;
+    height: 100px;
+    border: 2px solid blue;
+    display: block;
+    justify-content: center;
+}
+
+#DB2_LogFunc_chAnt_Head {
+    display: flex;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+}
+
+#DB2_LogFunc_chAnt_Title {
+    width: 220px;
+    height: 24px;
+    background-color: #3162b0;
+}
+
+#DB2_LogFunc_chAnt_Close {
+    width: 24px;
+    height: 24px;
+    background-color: #194181;
+    text-align: center;
+}
+
+    #DB2_LogFunc_chAnt_Close:hover {
+        background-color: #5175ae;
+        cursor: pointer;
+    }
+
+#DB2_LogFunc_chAnt_Content {
+    height: 76px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#DB2_LogFunc_chAnt_Info {
+    margin-right: 10px;
+}
+#DB2_SetupPoll input {
+    margin-left: 10px;
+}
+#DB2_SetupPoll{
+    height: 560px;
+    width: 460px;
+    padding: 3px;
+    background-color: white;
+    border: solid dimgray 3px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: absolute;
+    top: 25%;
+    z-index: 1;
+}
+.SetupPoll {
+    margin-top: 5px;
+    display: flex;
+    justify-content: left;
+    margin-left: 5px;
+}
+#SetupPollTitle {
+    height: 10%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+    font-size: 30px;
+    font-style: italic;
+    font-weight: bold;
+    color: #5175ae;
+    background-color: #194181;
+}
+#SetupPoll_Buttons{
+    display:flex;
+    justify-content: center;
+    margin-top: 5px;
+}
+.SetupButton{
+    width: 100px;
+    height: 50px;
+    font-size: 18px;
+    font-weight:bold;
+    font-style:italic;
+    margin: 0px 30px 0px 30px;
+}
+#SetupPollError {
+    height: 16px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+    font-size: 16px;
+    font-style: italic;
+    font-weight: bold;
+    color: red;
+}
+#SetupNode {
+    width: 130px;
+    height: 70px;
+    font-size: 40px;
+    margin-top: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#SetupNodeInner {
+    width: 100px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: dashed lightgray 3px;
+    color: white;
+}
+#SetupNodeInner:hover{
+    color: dimgray;
+    cursor: pointer;
+}
+
+#SetupNodeRemote {
+    width: 30px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: lightgray;
+    opacity: 0;
+}
+#SetupNodeRemote:hover{
+    color: dimgray;
+    cursor:pointer;
+}
+
+#SetupNodeOverlay:hover {
+    opacity: 1;
+}
+#DB2_SetupHeader {
+    height: 100px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+#DB2_SetupHeaderDesc {
+    font-size: 18px;
+}
+.DB2_SetupHeaderButton {
+    color: #5175ae;
+    background-color: #194181;
+    width: 150px;
+    height: 50px;
+    font-size: 20px;
+    margin: 0px 5px 0px 5px;
+}
+.DB2_SetupHeaderButton:hover{
+    color: aliceblue;
+}
+.DB2_SetupCollection {
+    border: dashed lightgray 3px;
+    padding: 5px;
+    width: 100%;
+    height: 200px;
+    margin: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    color:lightgray;
+    
+}
+.DB2_SetupCollection:hover {
+    border: dashed dimgray 3px;
+    cursor: pointer;
+    color: dimgray;
+}
+#DB2_SetupCollectionHint {
+    font-size: 36px;
+    color: white;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#DB2_SetupCollectionHint:hover{
+    color: dimgray;
+}
+#DB2_SetupDisplay {
+    height: 1000px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    border: solid lightgray 3px;
+}
+.DB2_Setup_Container {
+    width: 180px;
+    height: 180px;
+    border: solid white 3px;
+    margin: 0px 300px 0px 0px;
+    opacity: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+#DB2_SetupMainCollector{
+
+}
+.DB2_SetupCollectionRemoveBtn{
+    height: 100%;
+    width: 80px;
+}

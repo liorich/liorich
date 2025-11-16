@@ -1,0 +1,37 @@
+﻿@page
+@model Tak.Pages.Shared.RollbackModel
+@namespace Tak.Globals
+@{
+    Layout = "_Layout";
+}
+
+<div id="MainContainer">
+    <partial name="menu.cshtml" />
+    <div id="Pages">
+        <div id="Page_Rollback" class="DataPage">
+            <div id="Dashboard_Title" style='color: dodgerblue; font-style: italic; text-align: center; background-color: lightgray'><h2>Rollback</h2></div>
+            <div id="Rollback_Info"><b>Rollback</b> only works with data created by <b>Tak</b> server logs. View an extensive detail of the net state at any recorded time point using these details.</div>
+            <div id="DBR_DateSelect">
+                <div id="DBR_DateSelectInfo">Select Date: </div>
+                <select id="DBR_Date_Select" onchange="socketRequestRollbackNetState()" disabled>
+                    <option value="none">Querying Server...</option>
+                </select>
+            </div>
+            <hr />
+            <div id="DBR_Container">
+                <div class="DBR_Header">Time Seek</div>
+                <!-- time seeker -->
+                <div class="DBR_Header">Network State</div>
+                <div class="DBR_StateContainer"></div>
+                <!-- Template DBR_Group -->
+
+                <div class="DBR_Header">Details</div>
+                <div class="DBR_Details">
+                    <div class="DBR_Graph"></div>
+                    <div class="DBR_LQState"></div>
+                </div>
+                <div class="DBR_Comments"></div>
+            </div>
+        </div>
+    </div>
+</div>

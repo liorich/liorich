@@ -1,0 +1,44 @@
+﻿@page
+@model Tak.Pages.Shared.LogsModel
+@namespace Tak.Globals
+@{
+    Layout = "_Layout";
+}
+
+<div id="MainContainer">
+    <partial name="menu.cshtml" />
+    <div id="Pages">
+        <div id="Page_Logs" class="DataPage">
+            <div id="Dashboard_Title" style='color: grey; font-style: italic; text-align: center; background-color: lightgray'><h2>Logs Viewer</h2></div>
+            <div id="LogRequestContainer">
+                <div class="LogRequestChooseDates">
+                    <div class="LogRequestPrompt">
+                        Select Date:
+                        <select disabled name="dates" id="logDates" onchange="socketRequestCoupling()">
+                            <option value="none">Querying dates...</option>
+                        </select>
+                    </div><hr />
+                    <div class="LogRequestPrompt">
+                        Select Host-Platform Couple:
+                        <select disabled name="coupling" id="logCoupling" onchange="socketRequestAvailableTimeFrame()">
+                            <option value="none">...</option>
+                        </select>
+                    </div><hr />
+                    <div class="LogRequestPrompt">
+                        Insert desired time-window:
+                        <input type="time" id="logStart" min="00:00" max="23:59" step="1" disabled value="00:00:00" /> - <input type="time" id="logEnd" min="00:00" max="23:59" step="1" disabled value="23:59:59" />
+                        <button id="logSubmitQuery" disabled onclick="loggerValidateQuery()">Submit</button>
+                        <p id="logTimeComment"></p>
+                    </div><hr />
+                </div>
+            </div>
+            <div id="LogRequestDisplay">
+                <!-- Log Container goes here...-->
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+

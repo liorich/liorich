@@ -1,0 +1,25 @@
+﻿@page
+@model Tak.Pages.Shared.InfoModel
+@namespace Tak.Globals
+@{
+    Layout = "_Layout";
+}
+<div id="MainContainer">
+<partial name="menu.cshtml"/>
+    <div id="Pages">
+        <div id="Page_Info" class="DataPage">
+            <div id="Maintenance_Title" style='color: white; font-style: italic; text-align: center; background-color: #3162b0'><h2>Tak SOI</h2></div>
+            <div class="Maintenance_Container">
+                <div class="Maintenance_Info">
+                    <b>Tak is a WebApp Developed for SOI Communication Systems Trials and Log processing in real time.</b><br />
+                    The server <b>always</b> logs active links while it is running!<br />
+                    <br />
+                    <b>Features:</b><br />
+                    <b>Completed:</b> Dynamic GDT/ADT viewing, Live link graph ( up to 15 minutes ), Commenting, Antenna Change Functionality, Configure IP address for links, Configure names, Domo extension, Guest viewing<br />
+                    <b>To be implemented/Unfinished:</b> Rollback (Advanced log viewer)
+                </div>
+                <hr />
+            </div>
+        </div>
+    </div>
+</div>

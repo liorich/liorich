@@ -1,0 +1,122 @@
+﻿@page
+@model Tak.Pages.Shared.SetupModel
+@{
+}
+
+<script src="~/js/Setup.js" asp-append-version="true"></script>
+
+<div id="MainContainer">
+<partial name="menu.cshtml" />
+<div id="Pages">
+    <div id="Page_Dashboard" class="DataPage">
+        <div id="DB2_Title" style='color: grey; font-style: italic; text-align: center; background-color: lightgray'><h2>Setup</h2></div>
+        <div id="DB2_MainContainer">
+            <div id="DB2_SetupHeader">
+                    <div id="DB2_SetupHeaderDesc">In this page you can organise the network formation before trials.</div>
+                    <div id="DB2_SetupHeaderBtns">
+                        <button class="DB2_SetupHeaderButton" onclick="InitNodeSetup()">New Setup</button>
+                        <button class="DB2_SetupHeaderButton" disabled>Load file...</button>
+                        <button class="DB2_SetupHeaderButton" onclick="SaveSetup()">Save to file...</button>
+                    </div>
+            </div>
+            <div id="DB2_Title" style='color: grey; font-style: italic; text-align: left; background-color: lightgray'><h2>Currently Loaded formation</h2></div>
+            <hr />
+                <div id="DB2_SetupDisplay">
+                    <div class="DB2_SetupCollection" onclick="SetupAddNetwork()">Add Network</div>
+            </div>
+                
+            <template id="tmp_SetupContainer">
+                    <div class="DB2_Setup_Container"></div>
+            </template>
+
+            <!-- Node setup collection template -->
+                <template id="tmp_DB2_SetupCollection">
+                <div class="DB2_SetupCollection" id="DB2_SetupCollectionDiv">
+                    
+                        <!-- <div class="DB2_Setup_Container"></div> -->
+                </div>
+                </template>
+
+            <!-- Node setup template -->
+            <template id="tmp_SetupPoll">
+                <div id="DB2_SetupPoll">
+                    <div id="SetupPollTitle">Configure New Node</div>
+                        <div class="SetupPoll">
+                        <label for="name">Node Name:</label>
+                        <input type="text" id="name" name="name" placeholder="Must be unique, not empty." />
+                    </div>
+                        <div class="SetupPoll">
+                            <label for="graphType">Graph Type:</label>
+                            <select id="graphType">
+                                <option value="none">...</option>
+                                <option value="p2p">P2P/P2MP</option>
+                                <option value="mesh">Mesh</option>
+                            </select>
+                        </div>
+                    <div class="SetupPoll">
+                        <label for="stationType">Base or Remote:</label>
+                        <select id="stationType">
+                            <option value="none">...</option>
+                            <option value="base">Base Station</option>
+                            <option value="remote">Remote Node</option>
+                        </select>
+                    </div>
+                    
+                        <div class="SetupPoll">
+                            <label for="connectionType">Connection Type:</label>
+                            <select id="connectionType">
+                                <option value="none">...</option>
+                                <option value="shf">Shahaf</option>
+                                <option value="dtc">DTC</option>
+                                <option value="mix">Shahaf/DTC (Mixed)</option>
+                            </select>
+                        </div>
+                        <div class="SetupPoll">
+                            <label for="ShfID">Shahaf Platform ID:</label>
+                            <input type="text" id="ShfID" name="ShfID" placeholder="0 - 127" />
+                        </div>
+                        <div class="SetupPoll">
+                            <label for="MeshIP">Direct Mesh IP:</label>
+                            <input type="text" id="MeshIP" name="MeshIP" placeholder="..." />
+                        </div>
+                        <div class="SetupPoll">
+                            <label for="MeshUsername">Login Username:</label>
+                            <input type="text" id="MeshUsername" name="MeshUsername" placeholder="Can be empty." />
+                        </div>
+                        <div class="SetupPoll">
+                            <label for="MeshPW">Login Password:</label>
+                            <input type="text" id="MeshPW" name="MeshPW" placeholder="..." />
+                        </div>
+                        <div class="SetupPoll">
+                            <label for="LinkCheckIP">Link Check IP</label>
+                            <input type="text" id="LinkCheckIP" name="LinkCheckIP" placeholder="Can be empty." />
+                        </div>
+                        <div class="SetupPoll">
+                            <label for="hasExtendedMesh">Has extended mesh?</label>
+                            <input type="checkbox" id="hasExtendedMesh" name="hasExtendedMesh" />
+                        </div>
+                        <div id="SetupPollError">Error: Something misconfigured.</div>
+                        <div id="SetupPoll_Buttons">
+                            <button class="SetupButton">Confirm</button>
+                            <button class="SetupButton" hidden>Remove</button>
+                            <button class="SetupButton">Cancel</button>
+                        </div>
+                    </div>
+                </template>
+
+            <!-- Setup node clicker -->
+            <template id="tmp_SetupNode">
+                <div id="SetupNode">
+                    <div id="SetupNodeInner">
+                        <div id="SetupNodeDesc">New
+                        </div>
+                    </div>
+                    <div id="SetupNodeRemote">
+                        +
+                    </div>
+                </div>
+                </template>
+            </div>
+        </div>
+    </div>
+</div>

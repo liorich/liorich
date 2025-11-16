@@ -1,0 +1,47 @@
+﻿@page
+@model Tak.Pages.Shared.MaintenanceModel
+@namespace Tak.Globals
+@{
+    Layout = "_Layout";
+}
+<div id="MainContainer">
+    <partial name="menu.cshtml" />
+    <div id="Pages">
+        <div id="Page_Maintenance" class="DataPage">
+            <div id="Maintenance_Title" style='color: grey; font-style: italic; text-align: center; background-color: lightgray'><h2>Lehakot Maintenance</h2></div>
+            <hr />
+            <div class="Maintenance_Container">
+                <div class="Maintenance_Tab">Configure IP Address Links</div>
+                <div class="Maintenance_Info">RTT is measured to ADTs when an IP Address has been set up.</div>
+                <div class="Maintenance_Info_Block">
+                    <div class="Maintenance_Info">
+                        <button onclick="socketRequestPingerConfig()">Request Config</button>
+                        <button id="Maintenace_SavePingerConfig" onclick="MaintenanceSavePingerConfig()" disabled>Save Changes</button>
+                    </div>
+                    <textarea id="PingerConfigView" hidden></textarea>
+                </div>
+                <hr />
+            </div>
+            <div class="Maintenance_Container">
+                <div class="Maintenance_Tab">Configure Platform Names</div>
+                <div class="Maintenance_Info">You can display platforms by their SOI names rather than their GDT/ADT IDs.</div>
+                <div class="Maintenance_Info_Block">
+                    <div class="Maintenance_Info">
+                        <button onclick="socketRequestNameConfig()">Request Config</button>
+                        <button id="Maintenace_SaveNameConfig" onclick="MaintenanceSaveNameConfig()" disabled>Save Changes</button>
+                    </div>
+                    <textarea id="NameConfigView" hidden></textarea>
+                </div>
+                <hr />
+            </div>
+            <div class="Maintenance_Container" style="opacity: 0.5">
+                <div class="Maintenance_Tab">Configure Domo Link</div>
+                <div class="Maintenance_Info">[Not yet implemented]</div>
+                <hr />
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

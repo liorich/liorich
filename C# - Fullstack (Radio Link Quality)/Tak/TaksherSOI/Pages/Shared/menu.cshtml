@@ -1,0 +1,25 @@
+﻿@model Tak.Pages.Shared.menuModel
+@namespace Tak.Globals
+@{
+}
+
+<div id="Sidebar">
+    <div class="Sidebar_Header"><h2>Tak</h2>@Globals.VERSION</div>
+    <div id="Btn_Dashboard" class="Sidebar_Element" onclick="location.href='/Home';"><h4>Dashboard</h4></div>
+    <div id="Btn_Setup" class="Sidebar_Element" onclick="location.href='/Home/Setup';"><h4>Setup</h4></div>
+    @if (User.Identity.IsAuthenticated)
+    {
+        <div id="Btn_Rollback" class="Sidebar_Element" onclick="location.href='/Home/Rollback';"><h4><b>Rollback</b></h4></div>
+        <div id="Btn_Logs" class="Sidebar_Element" onclick="location.href='/Home/Logs';"><h4>Logs Viewer</h4></div>
+        <div id="Btn_Maintenance" class="Sidebar_Element" onclick="location.href='/Home/Maintenance';"><h4>Maintenance</h4></div>
+    }
+    <div id="Btn_Info" class="Sidebar_Element" onclick="location.href='/Home/Info';"><h4>WebApp Info</h4></div>
+    @if (!User.Identity.IsAuthenticated)
+    {
+    <div id="Btn_Login" class="Sidebar_Element" onclick="location.href='/Home/Login';"><h4>Login</h4></div>
+    }
+    else
+    {
+    <div id="Btn_Logout" class="Sidebar_Element" onclick="location.href='/Home/Logout';"><h4>Logout</h4></div>
+    }
+</div>

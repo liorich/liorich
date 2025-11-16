@@ -1,0 +1,102 @@
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+    font-family: Arial, Helvetica, sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+canvas{
+    image-rendering: pixelated;
+}
+
+#MainContainer{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: left;
+    position: relative;
+}
+.Sidebar_Header {
+    background-color: #194181;
+    font-style: italic; font-weight: bold;
+    text-align: center;
+    color: white;
+    height: 60px;
+}
+.Sidebar_Header h2{
+    display: inline;
+
+}
+
+#Sidebar {
+    width: 200px;
+    background-color: #3162b0;
+    height: 200vh;
+}
+.Sidebar_Element {
+    height: 50px;
+    width: 100%;
+    color: white;
+    text-align: center;
+    font-style: italic;
+    font-weight: bold;
+    padding: 12px 0;
+    cursor: pointer;
+}
+.Sidebar_Element:hover{
+    background-color: lightskyblue;
+}
+#Pages {
+    background-image: linear-gradient(to bottom,gray,lightgray,white,white,white,white,white,white,white,white,white);
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+.DataPage {
+    transition: opacity 0.5s ease-in-out;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+#Page_Dashboard2 {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+
+}
+#LogRequestDisplay{
+    display: flex;
+    justify-content: center;
+}
+.Maintenance_Container{
+    width: 100%;
+    height: auto;
+    display: block;
+}
+.Maintenance_Tab{
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 24px;
+}
+.Maintenance_Info{
+    margin-left: 5px;
+
+}
+.Maintenance_Info_Block {
+    display: block;
+    margin-left: 5px;
+}
+#PingerConfigView{
+    margin: 5px 0px 0px 5px;
+    width: 300px;
+}
